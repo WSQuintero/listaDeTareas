@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ButtonCheck from './ButtonCheck/ButtonCheck'
 import './Task.css'
 
-function Task ({ children, check, setSave }) {
+function Task ({ children, check }) {
   const [isCheck, setIsCheck] = useState(check)
 
   const classIsCheck = isCheck ? 'isCheck' : ''
