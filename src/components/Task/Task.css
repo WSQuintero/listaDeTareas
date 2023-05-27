@@ -1,0 +1,23 @@
+.container-task{
+  width: 97%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text-task{
+  width: 85%;
+  height: 40px;
+  padding-left: 20px;
+  border-bottom: 1px dotted gray;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.change-button{
+  width: 30px;
+  height: 30px;
+}
+.isCheck{
+  text-decoration: line-through;
+}

@@ -1,0 +1,11 @@
+.container-addTask{
+  width: 40vw;
+  min-height: 60vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: left;
+  justify-content: center;
+  background-color: rgb(236, 236, 236);
+}

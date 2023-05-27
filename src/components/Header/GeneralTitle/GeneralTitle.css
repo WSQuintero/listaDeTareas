@@ -1,0 +1,12 @@
+.container-title{
+  display: flex;
+  align-items: center;
+}
+.general-title{
+  font-size: 3rem;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 700;
+}
+.img-icon{
+  width: 50px;
+}

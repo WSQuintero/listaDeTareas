@@ -1,0 +1,10 @@
+.container-count{
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border: 1px solid gray;
+  color: rgb(0, 126, 199);
+}

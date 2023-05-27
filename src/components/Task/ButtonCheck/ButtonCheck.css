@@ -1,0 +1,27 @@
+.button-check {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+}
+
+.button-check .svg {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-check path {
+  transform: translate(8px,4px);
+}
+
+.color-check-green{
+  fill: rgb(58, 201, 22);
+}

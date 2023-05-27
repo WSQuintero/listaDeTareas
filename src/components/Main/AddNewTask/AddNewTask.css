@@ -1,0 +1,12 @@
+.form-new-task{
+  width: 100%;
+}
+.input-new-task{
+  width: 80%;
+  padding: 0 20px;
+  border-radius: 20px;
+}
+.button-new-task{
+  width: 70px;
+  height: 40px;
+}

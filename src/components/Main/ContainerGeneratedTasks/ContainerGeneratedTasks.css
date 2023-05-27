@@ -1,0 +1,7 @@
+.container-generated-tasks{
+  width: 60vw;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
