@@ -7,7 +7,9 @@ function SearchTasks ({
   setIsCheck,
   isCheck,
   checkTasks,
-  setCheckTasks
+  setCheckTasks,
+  deleteTasks,
+  setDeleteTasks
 }) {
   const filterTask = tasks.filter((task) => {
     return String(task)
@@ -23,6 +25,8 @@ function SearchTasks ({
         check={checkTasks && !!checkTasks.includes(task)}
         setCheckTasks={setCheckTasks}
         checkTasks={checkTasks}
+        deleteTasks={deleteTasks}
+        setDeleteTasks={setDeleteTasks}
       >
         {task}
       </Task>

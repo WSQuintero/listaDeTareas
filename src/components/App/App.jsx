@@ -14,10 +14,17 @@ import './App.css'
 
 function App () {
   const tasksInLocalStorage = JSON.parse(localStorage.getItem('tasks')) || []
-  const checkTasksInLocalStorage = JSON.parse(localStorage.getItem('checkTasks')) || []
+  const checkTasksInLocalStorage =
+    JSON.parse(localStorage.getItem('checkTasks')) || []
+  const deleteTasksInLocalStorage =
+    JSON.parse(localStorage.getItem('deleteTasks')) || []
+
   const [checkTasks, setCheckTasks] = useState(checkTasksInLocalStorage || [])
   const [tasks, setTasks] = useState(tasksInLocalStorage || [])
   const [searchTasks, setSearchTasks] = useState('')
+  const [deleteTasks, setDeleteTasks] = useState(
+    deleteTasksInLocalStorage || []
+  )
 
   useEffect(() => {
     const checkTasksJSON = JSON.stringify(checkTasks)
@@ -29,13 +36,37 @@ function App () {
     localStorage.setItem('tasks', tasksJSON)
   }, [tasks])
 
+  useEffect(() => {
+    const deleteTasksJSON = JSON.stringify(deleteTasks)
+    localStorage.setItem('deleteTasks', deleteTasksJSON)
+
+    const deleteFilter = tasks.filter((task) => {
+      return !deleteTasks.includes(task)
+    })
+    const deleteFind = tasks.filter((task) => {
+      return deleteTasks.includes(task)
+    })
+    const checkFilter = tasks.filter((task) => {
+      return !checkTasks.includes(task)
+    })
+
+    if (deleteTasks.length !== 0) {
+      setTasks(deleteFilter)
+      setCheckTasks(checkFilter)
+      setDeleteTasks(deleteFind)
+    }
+  }, [deleteTasks])
+
   return (
     <>
       <Header>
         <GeneralTitle />
         <SearchTask searchTasks={searchTasks} setSearchTasks={setSearchTasks} />
       </Header>
-      <CountCompleteTasks countTasksCheck={checkTasks} totalCountTasks={tasks}/>
+      <CountCompleteTasks
+        countTasksCheck={checkTasks}
+        totalCountTasks={tasks}
+      />
       <Main>
         <ContainerAddTask>
           <TitleAddTask />
@@ -50,6 +81,8 @@ function App () {
               checkTasks={checkTasks}
               setCheckTasks={setCheckTasks}
               checkTasksInLocalStorage={checkTasksInLocalStorage}
+              deleteTasks={deleteTasks}
+              setDeleteTasks={setDeleteTasks}
             />
               )
             : (
@@ -58,6 +91,8 @@ function App () {
               setTasks={setTasks}
               checkTasks={checkTasks}
               setCheckTasks={setCheckTasks}
+              deleteTasks={deleteTasks}
+              setDeleteTasks={setDeleteTasks}
             />
               )}
         </ContainerGeneratedTasks>

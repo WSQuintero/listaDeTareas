@@ -5,7 +5,15 @@ function AddNewTask ({ tasks, setTasks }) {
   const [inputText, setInputText] = useState('')
   const pressEnter = (event) => {
     if (event.key === 'Enter') {
-      setTasks([...tasks, [inputText, false]])
+      if (inputText !== '') {
+        setTasks([...tasks, inputText])
+        setInputText('')
+      }
+    }
+  }
+  const pressClick = () => {
+    if (inputText !== '') {
+      setTasks([...tasks, inputText])
       setInputText('')
     }
   }
@@ -24,9 +32,7 @@ function AddNewTask ({ tasks, setTasks }) {
       <button
         type='button'
         className='button-new-task'
-        onClick={() => {
-          setTasks([...tasks, inputText]); setInputText('')
-        }}
+        onClick={() => pressClick()}
       >
         Crear
       </button>
