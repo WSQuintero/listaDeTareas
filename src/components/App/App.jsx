@@ -13,16 +13,21 @@ import { SearchTasks } from '../Main/ContainerGeneratedTasks/SearchTasks/SearchT
 import './App.css'
 
 function App () {
-  const tasksInLocalStorage = JSON.parse(localStorage.getItem('tasks'))
+  const tasksInLocalStorage = JSON.parse(localStorage.getItem('tasks')) || []
+  const checkTasksInLocalStorage = JSON.parse(localStorage.getItem('checkTasks')) || []
+  const [checkTasks, setCheckTasks] = useState(checkTasksInLocalStorage || [])
   const [tasks, setTasks] = useState(tasksInLocalStorage || [])
   const [searchTasks, setSearchTasks] = useState('')
 
-  const addToLocalStorage = () => {
+  useEffect(() => {
+    const checkTasksJSON = JSON.stringify(checkTasks)
+    localStorage.setItem('checkTasks', checkTasksJSON)
+  }, [checkTasks])
+
+  useEffect(() => {
     const tasksJSON = JSON.stringify(tasks)
     localStorage.setItem('tasks', tasksJSON)
-  }
-
-  useEffect(addToLocalStorage, [tasks])
+  }, [tasks])
 
   return (
     <>
@@ -30,7 +35,7 @@ function App () {
         <GeneralTitle />
         <SearchTask searchTasks={searchTasks} setSearchTasks={setSearchTasks} />
       </Header>
-      <CountCompleteTasks />
+      <CountCompleteTasks countTasksCheck={checkTasks} totalCountTasks={tasks}/>
       <Main>
         <ContainerAddTask>
           <TitleAddTask />
@@ -39,10 +44,21 @@ function App () {
         <ContainerGeneratedTasks>
           {searchTasks !== ''
             ? (
-            <SearchTasks tasks={tasks} searchTasks={searchTasks} />
+            <SearchTasks
+              tasks={tasks}
+              searchTasks={searchTasks}
+              checkTasks={checkTasks}
+              setCheckTasks={setCheckTasks}
+              checkTasksInLocalStorage={checkTasksInLocalStorage}
+            />
               )
             : (
-            <SavedTasks tasks={tasks} setTasks={setTasks} />
+            <SavedTasks
+              tasks={tasks}
+              setTasks={setTasks}
+              checkTasks={checkTasks}
+              setCheckTasks={setCheckTasks}
+            />
               )}
         </ContainerGeneratedTasks>
       </Main>

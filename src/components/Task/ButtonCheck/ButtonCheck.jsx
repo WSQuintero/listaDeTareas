@@ -1,7 +1,7 @@
 import React from 'react'
 import './ButtonCheck.css'
 
-function ButtonCheck ({ isCheck, setIsCheck }) {
+function ButtonCheck ({ isCheck, setIsCheck, text, setCheckTasks, checkTasks }) {
   const colorCheck = isCheck ? 'color-check-green' : ''
 
   return (
@@ -9,6 +9,13 @@ function ButtonCheck ({ isCheck, setIsCheck }) {
       className='button-check'
       onClick={() => {
         setIsCheck(!isCheck)
+        if (!isCheck) {
+          setCheckTasks([...checkTasks, text])
+        } else {
+          const indexCheck = checkTasks.findIndex((check) => check === text)
+          const unCheckTasks = checkTasks.filter((a, b) => b !== indexCheck)
+          setCheckTasks(unCheckTasks)
+        }
       }}
     >
       <svg

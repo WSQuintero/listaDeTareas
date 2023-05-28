@@ -1,11 +1,21 @@
 import React from 'react'
 import Task from '../../../Task/Task'
 
-function SavedTasks ({ tasks }) {
+function SavedTasks ({
+  tasks,
+  checkTasks,
+  setCheckTasks
+}) {
+  console.log(checkTasks)
   return tasks.map((task) => {
     return (
-      <Task key={task[0]} check={task[1]} >
-        {task[0]}
+      <Task
+        key={task}
+        check={checkTasks && !!checkTasks.includes(task)}
+        setCheckTasks={setCheckTasks}
+        checkTasks={checkTasks}
+      >
+        {task}
       </Task>
     )
   })

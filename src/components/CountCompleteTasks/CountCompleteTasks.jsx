@@ -1,10 +1,12 @@
 import React from 'react'
 import './CountCompleteTasks.css'
 
-function CountCompleteTasks () {
+function CountCompleteTasks ({ countTasksCheck, totalCountTasks }) {
   return (
     <section className='container-count'>
-      <h2>Tienes 3 tareas completadas de 5</h2>
+      <h2>
+        Tienes {countTasksCheck.length} tareas completadas de {totalCountTasks.length}
+      </h2>
     </section>
   )
 }

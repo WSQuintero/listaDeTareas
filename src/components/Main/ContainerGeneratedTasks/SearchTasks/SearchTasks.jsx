@@ -1,21 +1,30 @@
 import React from 'react'
 import Task from '../../../Task/Task'
 
-function SearchTasks ({ tasks, searchTasks, setIsCheck, isCheck }) {
+function SearchTasks ({
+  tasks,
+  searchTasks,
+  setIsCheck,
+  isCheck,
+  checkTasks,
+  setCheckTasks
+}) {
   const filterTask = tasks.filter((task) => {
-    return String(task[0].toLowerCase()).startsWith(
-      String(searchTasks.toLowerCase())
-    )
+    return String(task)
+      .toLowerCase()
+      .includes(String(searchTasks.toLowerCase()))
   })
-  return filterTask.map((filter) => {
+  return filterTask.map((task) => {
     return (
       <Task
-        key={filter[0]}
+        key={task}
         setIsCheck={setIsCheck}
         isCheck={isCheck}
-        check={!filter[1]}
+        check={checkTasks && !!checkTasks.includes(task)}
+        setCheckTasks={setCheckTasks}
+        checkTasks={checkTasks}
       >
-        {filter[0]}
+        {task}
       </Task>
     )
   })
