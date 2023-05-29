@@ -8,7 +8,8 @@
   align-items: left;
   justify-content: center;
   background-color: rgb(231, 231, 231);
-  position: relative;
+  position:sticky ;
+  top: 0;
 }
 @media (max-width: 600px) {
   .container-addTask {
@@ -19,5 +20,6 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+    z-index: 2;
   }
 }

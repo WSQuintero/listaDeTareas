@@ -8,5 +8,6 @@
 @media (max-width: 600px) {
   .container-generated-tasks {
     width: 100%;
+    z-index: 1;
   }
 }
