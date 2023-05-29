@@ -6,7 +6,6 @@ import { CountCompleteTasks } from '../CountCompleteTasks/CountCompleteTasks'
 import { GeneralTitle } from '../Header/GeneralTitle/GeneralTitle'
 import { SavedTasks } from '../Main/ContainerGeneratedTasks/SavedTasks/SavedTasks'
 import { SearchTask } from '../Header/SearchTask/SearchTask'
-import { TitleAddTask } from '../Main/TitleAddTask/TitleAddTask'
 import { Header } from '../Header/Header'
 import { Main } from '../Main/Main'
 import { SearchTasks } from '../Main/ContainerGeneratedTasks/SearchTasks/SearchTasks'
@@ -69,7 +68,6 @@ function App () {
       />
       <Main>
         <ContainerAddTask>
-          <TitleAddTask />
           <AddNewTask tasks={tasks} setTasks={setTasks} />
         </ContainerAddTask>
         <ContainerGeneratedTasks>

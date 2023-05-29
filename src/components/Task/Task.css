@@ -1,11 +1,12 @@
-.container-task{
+.container-task {
   width: 97%;
   height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
-.text-task{
+.text-task {
   width: 85%;
   height: 40px;
   padding-left: 20px;
@@ -14,10 +15,26 @@
   align-items: center;
   font-size: 1.5rem;
 }
-.change-button{
-  width: 30px;
+.change-button {
+  width: 40px;
   height: 30px;
+  border-radius: 10px;
+  font-size: 2rem;
+  background-color: rgb(255, 255, 255);
+  color: rgb(141, 141, 141);
 }
-.isCheck{
+.change-button:hover{
+  background-color: rgb(236, 101, 101);
+  color:white;
+}
+.isCheck {
   text-decoration: line-through;
+}
+@media (max-width: 600px) {
+  .container-task {
+    width: 100%;
+  }
+  .text-task {
+    width: 100%;
+  }
 }

@@ -23,5 +23,10 @@
 }
 
 .color-check-green{
-  fill: rgb(58, 201, 22);
+  fill: rgb(68, 165, 255);
+}
+@media (max-width:600px) {
+  .button-check path {
+  transform: translate(0px,4px);
+}
 }

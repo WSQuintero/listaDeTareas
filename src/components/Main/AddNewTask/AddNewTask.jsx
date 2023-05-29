@@ -28,6 +28,7 @@ function AddNewTask ({ tasks, setTasks }) {
         onChange={(event) => setInputText(event.target.value)}
         value={inputText}
         onKeyDown={pressEnter}
+        placeholder='* Desayunar'
       />
       <button
         type='button'

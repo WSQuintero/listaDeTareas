@@ -6,5 +6,14 @@
   justify-content: center;
   font-size: 2rem;
   border: 1px solid gray;
-  color: rgb(0, 126, 199);
+  color: rgb(133, 133, 133);
+}
+.count-number{
+  color: rgb(68, 165, 255);
+}   
+@media (max-width:600px){
+  .container-count{
+    font-size: 1.2rem;
+    text-align: center;
+  }
 }

@@ -1,11 +1,23 @@
-.container-addTask{
+.container-addTask {
   width: 40vw;
-  min-height: 60vh;
+  min-height: 40vh;
   padding: 40px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: left;
   justify-content: center;
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(231, 231, 231);
+  position: relative;
+}
+@media (max-width: 600px) {
+  .container-addTask {
+    padding: 10px;
+    width: 100%;
+    min-height: 125px;
+    height: 100px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
 }

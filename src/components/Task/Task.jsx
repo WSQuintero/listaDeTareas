@@ -29,7 +29,7 @@ function Task ({
         setTasks={setTasks}
         tasks={tasks}
       />
-      <span className={`text-task ${classIsCheck} `}>{children}</span>
+      <span className={`text-task ${classIsCheck}`}>{children}</span>
       <button
         className='change-button'
         onClick={() => {
