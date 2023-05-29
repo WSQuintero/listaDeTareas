@@ -12,18 +12,16 @@ import { SearchTasks } from '../Main/ContainerGeneratedTasks/SearchTasks/SearchT
 import './App.css'
 
 function App () {
-  const tasksInLocalStorage = JSON.parse(localStorage.getItem('tasks')) || []
-  const checkTasksInLocalStorage =
-    JSON.parse(localStorage.getItem('checkTasks')) || []
-  const deleteTasksInLocalStorage =
-    JSON.parse(localStorage.getItem('deleteTasks')) || []
-
-  const [checkTasks, setCheckTasks] = useState(checkTasksInLocalStorage || [])
-  const [tasks, setTasks] = useState(tasksInLocalStorage || [])
+  const [checkTasks, setCheckTasks] = useState(() => {
+    return JSON.parse(localStorage.getItem('checkTasks')) || []
+  })
+  const [deleteTasks, setDeleteTasks] = useState(() => {
+    return JSON.parse(localStorage.getItem('deleteTasks')) || []
+  })
+  const [tasks, setTasks] = useState(() => {
+    return JSON.parse(localStorage.getItem('tasks')) || []
+  })
   const [searchTasks, setSearchTasks] = useState('')
-  const [deleteTasks, setDeleteTasks] = useState(
-    deleteTasksInLocalStorage || []
-  )
 
   useEffect(() => {
     const checkTasksJSON = JSON.stringify(checkTasks)
@@ -78,7 +76,6 @@ function App () {
               searchTasks={searchTasks}
               checkTasks={checkTasks}
               setCheckTasks={setCheckTasks}
-              checkTasksInLocalStorage={checkTasksInLocalStorage}
               deleteTasks={deleteTasks}
               setDeleteTasks={setDeleteTasks}
             />
