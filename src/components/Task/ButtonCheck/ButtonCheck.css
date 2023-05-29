@@ -23,7 +23,7 @@
 }
 
 .color-check-green{
-  fill: rgb(68, 165, 255);
+  fill: rgb(105, 255, 68);
 }
 @media (max-width:600px) {
   .button-check path {
