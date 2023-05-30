@@ -11,8 +11,7 @@ function Task ({
   tasks,
   deleteTasks,
   setDeleteTasks,
-  isDelete,
-  deleteFilter
+  isDelete
 }) {
   const [isCheck, setIsCheck] = useState(check)
 

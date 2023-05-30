@@ -1,30 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useAddNewTask } from '../../../logic/useAddNewTask'
 import './AddNewTask.css'
 
 function AddNewTask ({ tasks, setTasks }) {
-  const [inputText, setInputText] = useState('')
-  const [error, setError] = useState()
+  const {
+    setInputText,
+    pressClick,
+    pressEnter,
+    error,
+    inputText
+  } = useAddNewTask(tasks, setTasks)
 
-  const sendTasks = () => {
-    if (inputText !== '') {
-      if (!tasks.includes(inputText)) {
-        setTasks([...tasks, inputText])
-        setInputText('')
-        setError('')
-      } else {
-        setError('La tarea ya se encuentra ingresada')
-      }
-    }
-  }
-
-  const pressEnter = (event) => {
-    if (event.key === 'Enter') {
-      sendTasks()
-    }
-  }
-  const pressClick = () => {
-    sendTasks()
-  }
   return (
     <>
       <form

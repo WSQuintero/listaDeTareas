@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { AddNewTask } from '../Main/AddNewTask/AddNewTask'
 import { ContainerAddTask } from '../Main/ContainerAddTask/ContainerAddTask'
 import { ContainerGeneratedTasks } from '../Main/ContainerGeneratedTasks/ContainerGeneratedTasks'
@@ -9,50 +9,20 @@ import { SearchTask } from '../Header/SearchTask/SearchTask'
 import { Header } from '../Header/Header'
 import { Main } from '../Main/Main'
 import { SearchTasks } from '../Main/ContainerGeneratedTasks/SearchTasks/SearchTasks'
+import { useTaskManager } from '../../logic/useTaskManager'
 import './App.css'
 
 function App () {
-  const [checkTasks, setCheckTasks] = useState(() => {
-    return JSON.parse(localStorage.getItem('checkTasks')) || []
-  })
-  const [deleteTasks, setDeleteTasks] = useState(() => {
-    return JSON.parse(localStorage.getItem('deleteTasks')) || []
-  })
-  const [tasks, setTasks] = useState(() => {
-    return JSON.parse(localStorage.getItem('tasks')) || []
-  })
-  const [searchTasks, setSearchTasks] = useState('')
-
-  useEffect(() => {
-    const checkTasksJSON = JSON.stringify(checkTasks)
-    localStorage.setItem('checkTasks', checkTasksJSON)
-  }, [checkTasks])
-
-  useEffect(() => {
-    const tasksJSON = JSON.stringify(tasks)
-    localStorage.setItem('tasks', tasksJSON)
-  }, [tasks])
-
-  useEffect(() => {
-    const deleteTasksJSON = JSON.stringify(deleteTasks)
-    localStorage.setItem('deleteTasks', deleteTasksJSON)
-
-    const deleteFilter = tasks.filter((task) => {
-      return !deleteTasks.includes(task)
-    })
-    const deleteFind = tasks.filter((task) => {
-      return deleteTasks.includes(task)
-    })
-    const checkFilter = tasks.filter((task) => {
-      return !checkTasks.includes(task)
-    })
-
-    if (deleteTasks.length !== 0) {
-      setTasks(deleteFilter)
-      setCheckTasks(checkFilter)
-      setDeleteTasks(deleteFind)
-    }
-  }, [deleteTasks])
+  const {
+    checkTasks,
+    setCheckTasks,
+    deleteTasks,
+    setDeleteTasks,
+    tasks,
+    setTasks,
+    searchTasks,
+    setSearchTasks
+  } = useTaskManager()
 
   return (
     <>
