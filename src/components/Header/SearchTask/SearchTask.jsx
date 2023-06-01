@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../../../Context/TaskContext'
 import './SearchTask.css'
 
-function SearchTask ({ searchTasks, setSearchTasks }) {
+function SearchTask () {
+  const { searchTasks, setSearchTasks } = useContext(Context)
   return (
     <nav className='navBar'>
       <form action=''>

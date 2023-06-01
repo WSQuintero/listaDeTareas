@@ -1,33 +1,20 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import ButtonCheck from './ButtonCheck/ButtonCheck'
+import { Context } from '../../Context/TaskContext'
 import './Task.css'
 
 function Task ({
   children,
   check,
-  checkTasks,
-  setCheckTasks,
-  setTasks,
-  tasks,
-  deleteTasks,
-  setDeleteTasks,
   isDelete
 }) {
+  const { setDeleteTasks, deleteTasks } = useContext(Context)
   const [isCheck, setIsCheck] = useState(check)
-
   const classIsCheck = isCheck ? 'isCheck' : ''
 
   return (
     <div className='container-task'>
-      <ButtonCheck
-        setIsCheck={setIsCheck}
-        isCheck={isCheck}
-        text={children}
-        checkTasks={checkTasks}
-        setCheckTasks={setCheckTasks}
-        setTasks={setTasks}
-        tasks={tasks}
-      />
+      <ButtonCheck text={children} isCheck={isCheck} setIsCheck={setIsCheck} />
       <span className={`text-task ${classIsCheck}`}>{children}</span>
       <button
         className='change-button'

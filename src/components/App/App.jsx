@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { AddNewTask } from '../Main/AddNewTask/AddNewTask'
 import { ContainerAddTask } from '../Main/ContainerAddTask/ContainerAddTask'
 import { ContainerGeneratedTasks } from '../Main/ContainerGeneratedTasks/ContainerGeneratedTasks'
@@ -9,57 +9,24 @@ import { SearchTask } from '../Header/SearchTask/SearchTask'
 import { Header } from '../Header/Header'
 import { Main } from '../Main/Main'
 import { SearchTasks } from '../Main/ContainerGeneratedTasks/SearchTasks/SearchTasks'
-import { useTaskManager } from '../../logic/useTaskManager'
+import { Context } from '../../Context/TaskContext'
 import './App.css'
 
 function App () {
-  const {
-    checkTasks,
-    setCheckTasks,
-    deleteTasks,
-    setDeleteTasks,
-    tasks,
-    setTasks,
-    searchTasks,
-    setSearchTasks
-  } = useTaskManager()
-
+  const { searchTasks } = useContext(Context)
   return (
     <>
       <Header>
         <GeneralTitle />
-        <SearchTask searchTasks={searchTasks} setSearchTasks={setSearchTasks} />
+        <SearchTask />
       </Header>
-      <CountCompleteTasks
-        countTasksCheck={checkTasks}
-        totalCountTasks={tasks}
-      />
+      <CountCompleteTasks />
       <Main>
         <ContainerAddTask>
-          <AddNewTask tasks={tasks} setTasks={setTasks} />
+          <AddNewTask />
         </ContainerAddTask>
         <ContainerGeneratedTasks>
-          {searchTasks !== ''
-            ? (
-            <SearchTasks
-              tasks={tasks}
-              searchTasks={searchTasks}
-              checkTasks={checkTasks}
-              setCheckTasks={setCheckTasks}
-              deleteTasks={deleteTasks}
-              setDeleteTasks={setDeleteTasks}
-            />
-              )
-            : (
-            <SavedTasks
-              tasks={tasks}
-              setTasks={setTasks}
-              checkTasks={checkTasks}
-              setCheckTasks={setCheckTasks}
-              deleteTasks={deleteTasks}
-              setDeleteTasks={setDeleteTasks}
-            />
-              )}
+          {searchTasks !== '' ? <SearchTasks /> : <SavedTasks />}
         </ContainerGeneratedTasks>
       </Main>
     </>

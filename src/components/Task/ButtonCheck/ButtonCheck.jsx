@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../../../Context/TaskContext'
 import './ButtonCheck.css'
 
-function ButtonCheck ({ isCheck, setIsCheck, text, setCheckTasks, checkTasks }) {
+function ButtonCheck ({ text, isCheck, setIsCheck }) {
+  const { setCheckTasks, checkTasks } = useContext(Context)
   const colorCheck = isCheck ? 'color-check-green' : ''
 
   return (

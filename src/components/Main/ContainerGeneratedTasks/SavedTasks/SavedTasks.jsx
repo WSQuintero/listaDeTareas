@@ -1,31 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Task from '../../../Task/Task'
+import { Context } from '../../../../Context/TaskContext'
 import './SavedTasks.css'
-function SavedTasks ({
-  tasks,
-  checkTasks,
-  setCheckTasks,
-  setTasks,
-  deleteTasks,
-  setDeleteTasks
-}) {
+
+function SavedTasks () {
+  const { tasks, checkTasks, deleteTasks } = useContext(Context)
+  const isCheck = (task) => checkTasks && !!checkTasks.includes(task)
+  const isDelete = (task) => deleteTasks && !!deleteTasks.includes(task)
+
   return tasks.length !== 0
     ? (
         tasks.map((task) => {
           return (
-        <Task
-          key={task}
-          check={checkTasks && !!checkTasks.includes(task)}
-          setCheckTasks={setCheckTasks}
-          checkTasks={checkTasks}
-          tasks={tasks}
-          setTasks={setTasks}
-          deleteTasks={deleteTasks}
-          setDeleteTasks={setDeleteTasks}
-          isDelete={deleteTasks && !!deleteTasks.includes(task)}
-        >
-          {task}
-        </Task>
+            <Task key={task} check={isCheck(task)} isDelete={isDelete(task)}>
+              {task}
+            </Task>
           )
         })
       )

@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useAddNewTask } from '../../../logic/useAddNewTask'
+import { Context } from '../../../Context/TaskContext'
 import './AddNewTask.css'
 
-function AddNewTask ({ tasks, setTasks }) {
+function AddNewTask () {
+  const { tasks, setTasks } = useContext(Context)
+
   const {
     setInputText,
     pressClick,
