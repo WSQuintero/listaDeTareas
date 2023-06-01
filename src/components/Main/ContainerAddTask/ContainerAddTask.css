@@ -1,15 +1,33 @@
 .container-addTask {
   width: 40vw;
-  min-height: 40vh;
+  height: 60vh;
   padding: 40px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: left;
-  justify-content: center;
+  align-items: center;
+  justify-content: start;
   background-color: rgb(231, 231, 231);
   position:sticky ;
   top: 0;
+}
+
+.giff {
+  width: 60px;
+  height: 60px;
+  animation: animation 2s infinite linear;
+}
+
+@keyframes animation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 @media (max-width: 600px) {
   .container-addTask {
@@ -21,5 +39,8 @@
     align-items: center;
     justify-content: center;
     z-index: 2;
+  }
+  .giff{
+    display: none;
   }
 }

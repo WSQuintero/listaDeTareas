@@ -1,9 +1,11 @@
 .container-generated-tasks {
   width: 60vw;
+  height: 60vh;
   padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
+  overflow: scroll;
 }
 @media (max-width: 600px) {
   .container-generated-tasks {
