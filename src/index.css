@@ -11,4 +11,11 @@
 body{
   box-sizing: border-box;
   height: 100vh;
+  background-color: rgb(41, 41, 41);
+  position: relative;
+  padding: 10px;
+}
+
+#root{
+  position: relative;
 }

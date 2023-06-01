@@ -7,7 +7,7 @@ function CountCompleteTasks () {
 
   return (
     <section className='container-count'>
-      <h2>
+      <h2 className='count'>
         Tienes {<span className='count-number'>{checkTasks.length}</span>}{' '}
         tareas completadas de{' '}
         {<span className='count-number'>{tasks.length}</span>}

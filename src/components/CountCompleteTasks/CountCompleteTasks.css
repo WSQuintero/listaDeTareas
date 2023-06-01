@@ -1,18 +1,30 @@
 .container-count{
   width: 100%;
   height: 20vh;
-  padding: 30px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  border: 1px solid gray;
+  font-size: 1.7rem;
   color: rgb(133, 133, 133);
+  
+  
 }
 .count-number{
+
   color: rgb(68, 165, 255);
 }   
-@media (max-width:600px){
+
+.count{
+    width: 80%;
+  height: auto;
+  padding: 20px;
+  border: 1px solid rgb(167, 167, 167);
+  border-radius: 20px;
+  text-align: center;
+
+}
+@media (max-width: 850px){
   .container-count{
     font-size: 1.2rem;
     text-align: center;

@@ -1,19 +1,25 @@
 .container-task {
-  width: 97%;
-  height: 40px;
+  width: 100%;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  background-color: rgb(97, 97, 97);
+  border-radius: 20px;
+}
+.container-task:hover{
+  box-shadow: 0 0 10px rgb(182, 111, 19);
 }
 .text-task {
   width: 85%;
-  height: 40px;
+  height: auto;
   padding-left: 20px;
   border-bottom: 1px dotted gray;
   display: flex;
-  align-items: center;
+  align-items: start;
   font-size: 1.5rem;
+  color: rgb(235, 235, 235);
 }
 .change-button {
   width: 40px;
@@ -30,11 +36,14 @@
 .isCheck {
   text-decoration: line-through;
 }
-@media (max-width: 600px) {
+@media (max-width: 850px) {
   .container-task {
     width: 100%;
   }
   .text-task {
-    width: 100%;
+    width: 70%;
+    white-space: wrap; /* Evita el ajuste de línea */
+  overflow:scroll; /* Oculta el contenido desbordado */
+  text-overflow: ellipsis; 
   }
 }

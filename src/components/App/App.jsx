@@ -20,7 +20,6 @@ function App () {
         <GeneralTitle />
         <SearchTask />
       </Header>
-      <CountCompleteTasks />
       <Main>
         <ContainerAddTask>
           <AddNewTask />
@@ -29,6 +28,7 @@ function App () {
           {searchTasks !== '' ? <SearchTasks /> : <SavedTasks />}
         </ContainerGeneratedTasks>
       </Main>
+      <CountCompleteTasks />
     </>
   )
 }

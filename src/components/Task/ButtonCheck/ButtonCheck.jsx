@@ -4,7 +4,7 @@ import './ButtonCheck.css'
 
 function ButtonCheck ({ text, isCheck, setIsCheck }) {
   const { setCheckTasks, checkTasks } = useContext(Context)
-  const colorCheck = isCheck ? 'color-check-green' : ''
+  const colorCheck = isCheck ? 'color-check-green' : 'color-check'
 
   return (
     <button

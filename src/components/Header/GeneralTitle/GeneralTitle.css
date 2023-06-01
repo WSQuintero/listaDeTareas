@@ -3,10 +3,13 @@
   align-items: center;
 }
 .general-title{
+  margin-left: 20px;
   font-size: 3rem;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: 700;
+  color: rgb(238, 252, 255);
 }
 .img-icon{
   width: 50px;
+  
 }
