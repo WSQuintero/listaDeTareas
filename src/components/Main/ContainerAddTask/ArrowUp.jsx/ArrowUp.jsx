@@ -3,7 +3,6 @@ import React from 'react'
 function ArrowUp () {
   return (
     <>
-      <xml version='1.0' />
       <svg
         className='giff'
         version='1.0'
