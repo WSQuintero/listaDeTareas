@@ -1,14 +1,12 @@
 import React from 'react'
+import { ArrowUp } from './ArrowUp.jsx/ArrowUp'
 import './ContainerAddTask.css'
 
 function ContainerAddTask ({ children }) {
   return (
     <aside className='container-addTask'>
       {children}
-      <img
-        src='/arrowUp.svg'
-        className='giff'
-      ></img>
+      <ArrowUp />
     </aside>
   )
 }
