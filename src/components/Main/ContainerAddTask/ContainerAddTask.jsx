@@ -6,7 +6,7 @@ function ContainerAddTask ({ children }) {
     <aside className='container-addTask'>
       {children}
       <img
-        src='../../../../public/arrowUp.svg'
+        src='/arrowUp.svg'
         className='giff'
       ></img>
     </aside>
