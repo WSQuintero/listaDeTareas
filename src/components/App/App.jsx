@@ -28,7 +28,9 @@ function App () {
           {searchTasks !== '' ? <SearchTasks /> : <SavedTasks />}
         </ContainerGeneratedTasks>
       </Main>
-      <CountCompleteTasks />
+      <footer className='footer'>
+        <CountCompleteTasks />
+      </footer>
     </>
   )
 }

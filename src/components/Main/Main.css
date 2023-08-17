@@ -1,13 +1,16 @@
-main{
+main {
   width: 100%;
-  padding:0  20px;
-  height: 58vh;
+  padding: 0 20px;
+  height: 60vh;
   display: flex;
   gap: 20px;
+  overflow: hidden;
+
 }
 @media (max-width: 850px) {
-  main{
+  main {
     flex-direction: column;
     height: auto;
+    overflow: hidden;
   }
 }

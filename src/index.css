@@ -10,10 +10,11 @@
 
 body{
   box-sizing: border-box;
-  height: 100vh;
+  height: 99vh;
   background-color: rgb(41, 41, 41);
   position: relative;
   padding: 10px;
+  overflow: hidden;
 }
 
 #root{
