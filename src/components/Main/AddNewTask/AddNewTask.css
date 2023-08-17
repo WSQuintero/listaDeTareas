@@ -27,15 +27,7 @@
   transition: all 0.5s ease-out;
   cursor: pointer;
 }
-.button-new-task:hover{
-  border-radius: 50%;
-  position: absolute;
-  bottom: 30px;
-  height: 30px;
-    background-color: rgb(122, 219, 102);
-    transform: rotate(360deg);
 
-}
 .error{
   margin-top: 0px;
   color: red;
@@ -55,11 +47,5 @@
     bottom: -22px;
     margin: 0 auto;
   }
-  .button-new-task:hover{
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-    background-color: rgb(122, 219, 102);
 
-}
 }
